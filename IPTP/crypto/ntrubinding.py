@@ -4,7 +4,7 @@ Bindings to access the NTRU C shared object
 
 import ctypes
 
-_ntru = ctypes.CDLL('./ntru.so')
+_ntru = ctypes.CDLL('crypto/ntru.so')
 
 # Temporarily hardcoded values for convenience's sake
 PUBKEYSIZE = 2*935
@@ -49,7 +49,7 @@ def decrypt(pubkey, privkey, encrypted):
 
     return dec.value
 
-keys = gen_keypair()
-encrypted = encrypt(keys['pubkey'], b"data_to_encrypt")
-print(decrypt(keys['pubkey'], keys['privkey'], encrypted))
+#keys = gen_keypair()
+#encrypted = encrypt(keys['pubkey'], b"data_to_encrypt")
+#print(decrypt(keys['pubkey'], keys['privkey'], encrypted))
 
