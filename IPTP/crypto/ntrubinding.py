@@ -49,7 +49,8 @@ def decrypt(pubkey, privkey, encrypted):
 
     return dec.value
 
-#keys = gen_keypair()
-#encrypted = encrypt(keys['pubkey'], b"data_to_encrypt")
-#print(decrypt(keys['pubkey'], keys['privkey'], encrypted))
+keys = gen_keypair()
+encrypted = encrypt(keys['pubkey'], b"data_to_encrypt")
+print(encrypted)
+print(decrypt(keys['pubkey'], keys['privkey'], encrypted))
 

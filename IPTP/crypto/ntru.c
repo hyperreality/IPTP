@@ -26,10 +26,20 @@ void hex_to_arr(char *in, size_t insz, uint8_t *out) {
     }
 }
 
+int get_params(char *param_set) {
+    struct params {
+        struct NtruEncParams ntru_params; = NTRU_PARAMS;
+        size_t pub_len; = ntru_pub_len(&params);
+        size_t priv_len; = ntru_priv_len(&params);
+        size_t enc_len; = ntru_enc_len(&params);
+    }
+
+    return 0;
+
+
+}
+
 int gen_keypair(char *pub_buf, char *priv_buf, char *err) {
-    struct NtruEncParams params = NTRU_PARAMS;
-    size_t pub_len = ntru_pub_len(&params);
-    size_t priv_len = ntru_priv_len(&params);
 
     NtruRandGen rng_def = NTRU_RNG_DEFAULT;
     NtruRandContext rand_ctx_def;
